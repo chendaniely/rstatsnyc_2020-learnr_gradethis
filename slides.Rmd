@@ -102,14 +102,12 @@ https://www.twitch.tv/chendaniely
 
 # Hobbes -- Blue Heeler
 
-<div class="row" id="fill">
-  <div class="column">
-    <img src='./figs/hobbes-1.jpg'></img>
-  </div>
-  <div class="column">
-    <img src='./figs/hobbes-2.jpg'></img>
-  </div>
-</div>
+.pull-left[
+<img src='./figs/hobbes-1.jpg' style="height:375px;"></img>
+]
+.pull-right[
+<img src='./figs/hobbes-2.jpg' style="height:450px;"></img>
+]
 
 ---
 
@@ -180,14 +178,14 @@ https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis</span></div>
 
 # :D
 
-<div class="row" id="fill">
-  <div class="column">
-    <img src='./figs/twitter-hadley1.PNG'></img>
-  </div>
-  <div class="column">
-    <img src='./figs/twitter-hadley2.PNG'></img>
-  </div>
-</div>
+.pull-left[
+<center>
+<img src='./figs/twitter-hadley1.PNG' style="height:400px;"></img>
+</center>
+]
+.pull-right[
+<img src='./figs/twitter-hadley2.PNG' style="height:400px;"></img>
+]
 
 ---
 
