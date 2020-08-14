@@ -100,6 +100,19 @@ https://www.twitch.tv/chendaniely
 
 ---
 
+# Hobbes -- Blue Heeler
+
+<div class="row" id="fill">
+  <div class="column">
+    <img src='./figs/hobbes-1.jpg'></img>
+  </div>
+  <div class="column">
+    <img src='./figs/hobbes-2.jpg'></img>
+  </div>
+</div>
+
+---
+
 # RStudio Internship
 
 <div class="my-footer"><span>@chendaniely
@@ -163,7 +176,18 @@ https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis</span></div>
 
 ![](./figs/shiny_book-join_leave.png)
 
+---
 
+# :D
+
+<div class="row" id="fill">
+  <div class="column">
+    <img src='./figs/twitter-hadley1.PNG'></img>
+  </div>
+  <div class="column">
+    <img src='./figs/twitter-hadley2.PNG'></img>
+  </div>
+</div>
 
 ---
 
