@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Grading Code with gradethis</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Daniel Chen @chendaniely" />
+    <meta name="date" content="2020-08-11" />
+    <script src="libs/header-attrs-2.2/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="footer-header.css" type="text/css" />
+    <link rel="stylesheet" href="slide-content.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Grading Code with gradethis
+## NYR Conference 2020
+### Daniel Chen <span class="citation">@chendaniely</span>
+### Virginia Tech
+### 2020-08-11
+
+---
+
+
+class: inverse
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+&lt;center&gt;
+&lt;div class="hello"&gt;hi!&lt;/div&gt;
+&lt;/center&gt;
+
+---
+
+class: inverse
+
+# I'm Daniel
+.pull-left[
+&lt;img src='./figs/daniel_square-800x800.jpg'&gt;&lt;/img&gt;
+]
+
+.pull-right[
+- PhD Student: Virginia Tech
+  - Data Science education &amp; pedagogy
+  - Medical, Biomedical, Health Sciences
+    - https://github.com/chendaniely/dissertation
+  - Advisor: Anne Brown, PhD
+      - https://www.databridge.dev/
+      - https://bevanbrownlab.com/
+-  2019 Inten at RStudio
+  - [`gradethis`](https://github.com/rstudio-education/gradethis)
+  - Code grader for [`learnr`](https://github.com/rstudio/learnr) documents
+- Author:
+&lt;center&gt;
+&lt;img src='./figs/book.jpg' style="width:150px;"&gt;&lt;/img&gt;
+&lt;/center&gt;
+]
+
+---
+
+class: center
+
+# How's Quarantine?
+
+.pull-left[
+&lt;img src='./figs/julia.jpg' style="height:450px;"&gt;&lt;/img&gt;
+]
+.pull-right[
+&lt;img src='./figs/3d-mask.jpg' style="height:250px;"&gt;&lt;/img&gt;
+&lt;img src='./figs/3d-face.jpg' style="height:250px;"&gt;&lt;/img&gt;
+]
+
+
+---
+
+# How's Quarantine?
+
+&lt;div class="row" id="fill"&gt;
+  &lt;div class="column"&gt;
+    &lt;img src='./figs/game-animal_crossing.jpg'&gt;&lt;/img&gt;
+  &lt;/div&gt;
+  &lt;div class="column"&gt;
+    &lt;img src='./figs/game-beat_saber.jpg'&gt;&lt;/img&gt;
+  &lt;/div&gt;
+  &lt;div class="column"&gt;
+    &lt;img src='./figs/game-overwatch.jpg'&gt;&lt;/img&gt;
+  &lt;/div&gt;
+  &lt;div class="column"&gt;
+    &lt;img src='./figs/game-dnd5e.jpg'&gt;&lt;/img&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+.pull-left[
+https://github.com/chendaniely/animal_crossing
+
+https://github.com/chendaniely/animalcrossing
+]
+.pull-right[
+https://www.twitch.tv/chendaniely
+]
+
+---
+
+# RStudio Internship
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+https://rstudio-education.github.io/gradethis/
+
+- Worked on `gradethis` for my [RStudio 2019 Internship](https://blog.rstudio.com/2019/03/25/summer-interns-2019/)
+  - Barret Schloerke, PhD
+  - Garrett Grolemund, PhD
+
+- I am a user of R, not a developer.
+
+- Wrote about my experiences:
+  - [My time as an intern](https://daniel.rbind.io/2020/01/29/my-time-as-an-rstudio-intern/)
+  - [Internship week 1](https://daniel.rbind.io/2019/06/10/and-were-off-rstudio-internship-week-1-complete./)
+  - [Internship week 2](https://daniel.rbind.io/2019/06/18/rstudio-internship-week-2/)
+  - [Moved to blogdown](https://daniel.rbind.io/2019/07/23/new-website-a-la-blogdown/)
+  - [Git workflow](https://daniel.rbind.io/2019/08/27/git-squash-and-merge-workflow/)
+  - [Rstudio education blog post](https://education.rstudio.com/blog/2020/02/gestalt-internship/)
+
+---
+
+# Education + Shiny Team
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+.pull-left[
+Education Team
+
+![](./figs/00-education_team.png)
+]
+
+.pull-right[
+Shiny Team
+
+![](./figs/00-shiny_team.png)
+]
+
+---
+
+# Join all the slack channels!
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+- What? A book about shiny?
+
+- Yes! https://mastering-shiny.org/
+- No ):
+
+![](./figs/shiny_book-join_leave.png)
+
+
+
+---
+
+# Learnr interactive tutorials
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+https://rstudio.github.io/learnr/
+
+
+1. Narrative, figures, illustrations, and equations.
+2. Code exercises (R code chunks that users can edit and execute directly).
+3. Quiz questions.
+4. Videos (supported services include YouTube and Vimeo).
+5. Interactive Shiny components.
+
+
+---
+
+# Creating a `learnr` tutorial
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+```yaml
+---
+title: "Hello, Tutorial!"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+```
+
+````markdown
+```{r setup, include=FALSE}
+library(learnr)
+```
+
+This code computes the answer to one plus one, change it so it computes two plus two:
+
+```{r addition, exercise=TRUE}
+1 + 1
+```
+````
+
+---
+
+# Learnr output
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+&lt;center&gt;
+&lt;img src="./figs/learnr-output.png" /&gt;
+&lt;/center&gt;
+
+---
+
+# Sortable
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+- More `learnr` examples: https://rstudio.github.io/learnr/examples.html
+  - `sortable`: https://andrie-de-vries.shinyapps.io/sortable_tutorial_question_rank/
+
+&lt;center&gt;
+&lt;img src="./figs/sortable-example.gif" /&gt;
+&lt;/center&gt;
+
+---
+
+# Sortable -&gt; Parsons
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+- Parson problems are coding exercises designed to **reduce cognitive load** on the learner.
+  - Instead of writing the code, they order code blocks in the correct order
+  - Reduces syntax errors
+    - Learn the "what" concepts instead of the "how" syntax
+
+https://github.com/rstudio/parsons
+
+---
+
+# Parsons
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+&lt;center&gt;
+&lt;img src="./figs/parsons-example.gif" /&gt;
+&lt;/center&gt;
+
+---
+
+# Grading the questions
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+We can create questions, but how do we give feedback?
+
+At the very least how to we tell the student the solution they provided was "wrong"?
+
+---
+
+# Look at the result
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+- Only check if the solutions match
+- As long as the correct answer is returned, it doesn't matter how the student got the answer
+  - Can't check if you are trying to teach a specific function
+
+E.g., `3 + 3 = 6 = 2 * 3`
+
+---
+
+# Look at the code
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+- Essentially compares the actual code (e.g., the text)
+- It's very strict
+  - `3 + 3` != `2 * 3`
+  - `apply(df, 2, class)` != `apply(df, MARGIN = 2, FUN = class)`
+  - `mean(1:5)` != `mean(1:5, na.rm=FALSE)`
+
+---
+
+# Look at the code's AST
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+- The Abstract Syntax Tree (AST) is a graphical (i.e., tree) representation of
+your code.
+- It shows the order of function calls and their arguments to be executed.
+
+.pull-left[
+
+```r
+lobstr::ast(
+  log(exp(3))
+)
+```
+
+```
+## o-log 
+## \-o-exp 
+##   \-3
+```
+
+
+```r
+lobstr::ast(
+  log(exp(2))
+)
+```
+
+```
+## o-log 
+## \-o-exp 
+##   \-2
+```
+]
+
+.pull-right[
+
+```r
+lobstr::ast(
+  log(log(2, base = 10))
+)
+```
+
+```
+## o-log 
+## \-o-log 
+##   +-2 
+##   \-base = 10
+```
+]
+
+---
+
+# Gradethis
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+https://rstudio-education.github.io/gradethis/
+
+- Auto grading system that can be used to grade `learnr` exercises.
+  - Check the answer
+  - Check the code (using the AST)
+
+- In `learnr`, each exercise is completely independent from the others
+
+- What makes it unique is its ability to give formative feedback to the student.
+
+- `leanr` but why not `grader`?
+  - The package was originally named `grader`
+  - Someone from UVA took the name on CRAN during the first few weeks of the internship.
+  - https://github.com/rstudio-education/gradethis/issues/18
+
+---
+
+# Formative feedback
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+&lt;center&gt;
+&lt;img src="./figs/gradethis-example.png" /&gt;
+&lt;/center&gt;
+
+---
+
+# `learnr` + `gradethis`
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+1. base chunk: what the student sees in the exercise
+2. `-check` chunk: how should the student's code be graded
+    1. solution: are you just checking the final result?
+        - `gradethis::grade_result()`
+        - Provide a set of conditions to check, returns result on *first match* (i.e., order of conditions matter)
+    2. code: are you checking to see the code itself is correct (AST)
+        - `gradethis::grade_code()`
+        - `-solution` chunk: The instructor's solution code that will be used to compare to the student's code
+    3. unittests: are you testing a function that needs to pass a bunch of checks?
+        - `gradethis::grade_conditions()`
+3. `-hint` chunks (optional)
+
+---
+
+# `learnr`
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+Set the checking function for `learnr`
+
+````markdown
+```{r setup}
+library(gradethis)
+tutorial_options(exercise.checker = gradethis::grade_learnr)
+```
+
+We can scaffold the exercise to reduce cognitive load.
+````markdown
+```{r addition, exercise=TRUE}
+log(_____(_____))
+```
+````
+
+And want the student to enter
+
+````markdown
+```{r addition, exercise=TRUE}
+log(exp(3))
+```
+````
+
+---
+
+# `learnr` + `gradethis::grade_result()`
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+````markdown
+```{r addition, exercise=TRUE}
+log(_____(_____))
+```
+
+```{r addition-hint-1}
+# hint text
+"Exponentiate with the `exp` function."
+```
+
+```{r addition-check}
+# check result
+gradethis::grade_result(
+  # pass_if fail_if order does matter. Maybe put pass_if conditions last?
+
+  #.result is the last value returned by the student
+  gradethis::pass_if(~ identical(.result, 3), "YAY!"),
+  gradethis::fail_if(function(x){identical(x, 4)}, "4 is an incorrect input.")
+  gradethis::fail_if(2, "2 was the wrong number to use here.")
+)
+```
+````
+
+---
+
+# `learnr` + `gradethis::grade_code()`
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+````markdown
+```{r addition, exercise=TRUE}
+log(_____(_____))
+```
+
+```{r addition-hint-1}
+# hint text
+"Exponentiate with the `exp` function."
+```
+
+```{r addition-solution}
+# solution code
+log(exp(3))
+```
+
+```{r addition-check}
+# check code
+gradethis::grade_code()
+```
+````
+
+---
+
+# `learnr` + `gradethis::grade_conditions()`
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+````markdown
+```{r grade_conditions, exercise = TRUE}
+# student code
+add_1 &lt;- function(x) {x + 1}
+```
+
+```{r grade_conditions-hint-1}
+# hint text
+"Function should take a parameter and add 1 to it"
+```
+
+```{r grade_conditions-check}
+gradethis::grade_conditions(
+  gradethis::pass_if(~ .result(3) == 4),
+  gradethis::pass_if(~ .result(-1) == 0),
+  gradethis::fail_if(~ .result(10) == 11)
+)
+```
+````
+
+---
+
+# Chunk names matter
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+.pull-left[
+````markdown
+```{r addition, exercise=TRUE}
+log(_____(_____))
+```
+
+```{r addition-hint-1}
+# hint text
+"Exponentiate with the `exp` function."
+```
+
+```{r addition-solution}
+# solution code
+log(exp(3))
+```
+
+```{r addition-check}
+# check code
+gradethis::grade_code()
+```
+````
+]
+
+.pull-right[
+- The hints/soluction/check blocks use the same base name for association
+- `knitr` chunks need to be unique
+]
+
+---
+
+# `gradethis` chunk addins
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+.pull-left[
+- Creates random chunk names
+
+&lt;img src="./figs/gradethis-addon.png" width='100%' /&gt;
+]
+
+.pull-right[
+````markdown
+```{r qhdcovmzxfhuycxw, exercise = TRUE}
+# student code
+____
+```
+
+```{r qhdcovmzxfhuycxw-hint-1}
+# hint text
+""
+```
+
+```{r qhdcovmzxfhuycxw-solution}
+# solution code
+
+```
+
+```{r qhdcovmzxfhuycxw-check}
+# check code
+gradethis::grade_code()
+```
+````
+]
+---
+
+# Be careful with `==`
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+- https://daniel.rbind.io/2019/08/06/inconsistencies-with-in-r/
+  - "inconsistency", "improper documentation", "bug"
+
+
+```r
+# only difference is the last parameter
+u &lt;- quote(f(x123456789012345678901234567890123456789012345678901234567890, 1))
+
+s &lt;- quote(f(x123456789012345678901234567890123456789012345678901234567890, 2))
+```
+
+
+```r
+u == s
+```
+
+```
+## [1] TRUE
+```
+
+
+```r
+identical(u, s)
+```
+
+```
+## [1] FALSE
+```
+
+- Take away: use `idential` or `all.equal` instead of `==` when doing (non-vectorized) comparisons.
+  - Vignette in PR: https://github.com/rstudio-education/gradethis/pull/102
+
+---
+
+# Dev guide: `learnr` vs `gradethis`
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+- `learnr` is responsible for
+  - Expression capturing
+  - Data reporting
+    - How many questions did my student get "correct"?
+    - How much time did my students take for each question or for the entire document?
+
+- `gradethis` is responsible for:
+  - Checking the student solution
+  - Correct/Incorrect message + praise/encouragement
+
+---
+
+# Dev guide: `learnr` checker
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+- `learnr` is a complex piece of software that needs a deep understanding of `knitr`, `rmarkdown`, and `shiny`.
+
+- All of the exercise components in the `learnr` document are passed into the `exercise.checker`.
+  - This is an entry point if you want to write your own `learnr` checker
+
+- To enable exercise checking in your learnr tutorial:
+
+````markdown
+```{r setup}
+library(gradethis)
+tutorial_options(exercise.checker = gradethis::grade_learnr)
+```
+````
+
+- The `grade_learnr` function:
+  - The function `learnr` passes all the chunk code into
+  - Passes into the corresponding `gradethis::grade_` function
+
+---
+
+# Standalone code grader: result
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+
+```r
+library(gradethis)
+
+student_solution &lt;- 5
+```
+
+
+```r
+graded_result &lt;- gradethis::grade_result(
+  pass_if(5, "You also got a value of 5!"),
+  learnr_args = list(last_value = student_solution)
+)
+```
+
+```
+## Loading required namespace: testthat
+```
+
+```r
+graded_result
+```
+
+```
+## $message
+## Out of this world! You also got a value of 5! 
+## 
+## $correct
+## [1] TRUE
+## 
+## attr(,"class")
+## [1] "grader_graded"
+```
+
+---
+
+# Standalone code grader: code
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+
+```r
+student_code  &lt;- quote(sqrt(exp(3)))
+solution_code &lt;- quote(sqrt(log(2)))
+```
+
+
+```r
+graded_code &lt;- gradethis::grade_code(grader_args = list(
+  user_quo = student_code,
+  solution_quo = solution_code
+  )
+)
+
+graded_code
+```
+
+```
+## $message
+## I expected a call to log(); what you wrote was interpreted as exp(3).  Let's try it again.
+## 
+## $correct
+## [1] FALSE
+## 
+## attr(,"class")
+## [1] "grader_graded"
+```
+---
+
+# Internship: `eval_tidy` example
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+
+```r
+form &lt;- ~ x ^ 2 # capture an expression + environment
+str(form)
+```
+
+```
+## Class 'formula'  language ~x^2
+##   ..- attr(*, ".Environment")=&lt;environment: R_GlobalEnv&gt;
+```
+
+
+```r
+form[[2]] # just get the expression
+```
+
+```
+## x^2
+```
+
+
+```r
+rlang::eval_tidy(
+  expr = form[[2]], # evaluate the expression with data + environment
+  data = list(x = 15),
+  env = .GlobalEnv
+)
+```
+
+```
+## [1] 225
+```
+
+---
+
+# Internship: `eval_tidy` in practice
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+https://github.com/rstudio-education/gradethis/blob/master/R/evaluate_condition.R
+
+During `gradethis::grade_result`:
+
+```r
+switch(condition$type,
+           "formula" = evaluate_condi_formula(condition$x, learnr_args$last_value, learnr_args$envir_prep), # nolint
+           "function" = evaluate_condi_function(condition$x, learnr_args$last_value),
+           "value" = evaluate_condi_value(condition$x, learnr_args$last_value)
+         )
+```
+
+```r
+evaluate_condi_formula &lt;- function(formula, user_answer, env) {
+  form_result &lt;- rlang::eval_tidy(
+    formula[[2]],
+    data = list(.result = user_answer, . = user_answer),
+    env = env
+  )
+  return(form_result)
+}
+```
+---
+
+# Python!
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+- pygradethis by Nischal Shrestha (Current RStudio intern)
+    - https://github.com/nischalshrestha/pygradethis
+
+- Can use Python + `learnr` to check results, but checking the result is more involved.
+    - Python does not have a `quote` function
+    - Working with code expressions involve quoting things as strings and using `ast.parse()`
+    
+#### Still in (very active) development
+
+```python
+grade_code("2 + sqrt(log(2))", "2 + sqrt(log(1))")
+```
+
+&gt; I expected 1, but you wrote 2 in log(2) at line 1.
+
+---
+
+class: center, middle, inverse
+
+
+# Thanks!
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+.pull-left[
+&lt;img src="./figs/interns.gif" /&gt;
+]
+
+.pull-right[
+[@chendaniely](https://twitter.com/chendaniely)
+
+slides: https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis
+
+pdf: https://speakerdeck.com/chendaniely/rstatsnyc_2020-learnr_gradethis
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
