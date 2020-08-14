@@ -903,5 +903,5 @@ https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis</span></div>
 
 slides: https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis
 
-pdf: https://speakerdeck.com/chendaniely/rstatsnyc_2020-learnr_gradethis
+pdf: https://speakerdeck.com/chendaniely/rstatsnyc-2020-grading-code-with-gradethis
 ]
