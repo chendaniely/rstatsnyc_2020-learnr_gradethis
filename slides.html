@@ -465,10 +465,12 @@ Set the checking function for `learnr`
 library(gradethis)
 tutorial_options(exercise.checker = gradethis::grade_learnr)
 ```
+````
 
 We can scaffold the exercise to reduce cognitive load.
+
 ````markdown
-```{r addition, exercise=TRUE}
+```{r chunkLabel, exercise=TRUE}
 log(_____(_____))
 ```
 ````
@@ -476,7 +478,7 @@ log(_____(_____))
 And want the student to enter
 
 ````markdown
-```{r addition, exercise=TRUE}
+```{r chunkLabel, exercise=TRUE}
 log(exp(3))
 ```
 ````
@@ -492,16 +494,16 @@ log(exp(3))
 https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
 
 ````markdown
-```{r addition, exercise=TRUE}
+```{r chunkLabel, exercise=TRUE}
 log(_____(_____))
 ```
 
-```{r addition-hint-1}
+```{r chunkLabel-hint-1}
 # hint text
 "Exponentiate with the `exp` function."
 ```
 
-```{r addition-check}
+```{r chunkLabel-check}
 # check result
 gradethis::grade_result(
   # pass_if fail_if order does matter. Maybe put pass_if conditions last?
@@ -525,21 +527,21 @@ gradethis::grade_result(
 https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
 
 ````markdown
-```{r addition, exercise=TRUE}
+```{r chunkLabel, exercise=TRUE}
 log(_____(_____))
 ```
 
-```{r addition-hint-1}
+```{r chunkLabel-hint-1}
 # hint text
 "Exponentiate with the `exp` function."
 ```
 
-```{r addition-solution}
+```{r chunkLabel-solution}
 # solution code
 log(exp(3))
 ```
 
-```{r addition-check}
+```{r chunkLabel-check}
 # check code
 gradethis::grade_code()
 ```
@@ -587,21 +589,21 @@ https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/
 
 .pull-left[
 ````markdown
-```{r addition, exercise=TRUE}
+```{r chunkLabel, exercise=TRUE}
 log(_____(_____))
 ```
 
-```{r addition-hint-1}
+```{r chunkLabel-hint-1}
 # hint text
 "Exponentiate with the `exp` function."
 ```
 
-```{r addition-solution}
+```{r chunkLabel-solution}
 # solution code
 log(exp(3))
 ```
 
-```{r addition-check}
+```{r chunkLabel-check}
 # check code
 gradethis::grade_code()
 ```
@@ -725,6 +727,7 @@ https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/
 https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
 
 - `learnr` is a complex piece of software that needs a deep understanding of `knitr`, `rmarkdown`, and `shiny`.
+  - Nischal Shrestha (2020 Intern): https://education.rstudio.com/blog/2020/07/learning-learnr/
 
 - All of the exercise components in the `learnr` document are passed into the `exercise.checker`.
   - This is an entry point if you want to write your own `learnr` checker
@@ -741,6 +744,26 @@ tutorial_options(exercise.checker = gradethis::grade_learnr)
 - The `grade_learnr` function:
   - The function `learnr` passes all the chunk code into
   - Passes into the corresponding `gradethis::grade_` function
+
+---
+
+# Dev guide: Pipes
+
+&lt;div class="my-footer"&gt;&lt;span&gt;@chendaniely
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;NYR Conference 2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+https://github.com/chendaniely/rstatsnyc_2020-learnr_gradethis&lt;/span&gt;&lt;/div&gt;
+
+```r
+df %&gt;% dplyr::select(col1)
+```
+
+unpipes into
+
+```r
+dplyr::select(df, col1)
+```
 
 ---
 
@@ -777,7 +800,7 @@ graded_result
 
 ```
 ## $message
-## Out of this world! You also got a value of 5! 
+## Terrific! You also got a value of 5! 
 ## 
 ## $correct
 ## [1] TRUE
@@ -815,7 +838,7 @@ graded_code
 
 ```
 ## $message
-## I expected a call to log(); what you wrote was interpreted as exp(3).  Let's try it again.
+## I expected a call to log(); what you wrote was interpreted as exp(3).  Don't give up now, try it one more time.
 ## 
 ## $correct
 ## [1] FALSE
